@@ -6,6 +6,9 @@ services:
     command: bash
     volumes:
       - ../../src:/app
+  busybox:
+    build:
+      context: ../../builds/busybox
   pyruiz: 
     build: 
       context: ../../builds/pyruiz
