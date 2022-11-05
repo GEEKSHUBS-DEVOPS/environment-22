@@ -1,8 +1,14 @@
 version: "3"
 services:
-  angular-cli: 
-    build: 
+  angular-cli:
+    build:
       context: ../../builds/angular-cli
     command: bash
     volumes:
       - ../../src:/app
+  composer-cli:
+    build:
+      context: ../../builds/composer-cli
+    command: bash
+    volumes:
+      - ../../src/php-app:/php-app

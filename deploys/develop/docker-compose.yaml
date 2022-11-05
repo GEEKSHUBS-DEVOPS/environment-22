@@ -1,9 +1,9 @@
 version: "3"
 services:
   frontend:
-    build: 
+    build:
       context: ../../builds/angular-cli
-    command: 
+    command:
       - ng
       - serve
       - --open
@@ -17,9 +17,12 @@ services:
   backend-legacy:
     build:
       context: ../../builds/php-gd
-  microservice-a: 
+  microservice-a:
     build:
       context: ../../builds/nestjs-cli
   mongo:
-    build: 
+    build:
       context: ../../builds/mongo
+  php-fpm:
+    build:
+      context: ../../builds/php-fpm
