@@ -1,0 +1,25 @@
+version: "3"
+services:
+  frontend:
+    build: 
+      context: ../../builds/angular-cli
+    command: 
+      - ng
+      - serve
+      - --open
+      - --watch
+      - --host
+      - 0.0.0.0
+    volumes:
+      - ../../src/frontend:/app
+    ports:
+      - 4200:4200
+  backend-legacy:
+    build:
+      context: ../../builds/php-gd
+  microservice-a: 
+    build:
+      context: ../../builds/nestjs-cli
+  mongo:
+    build: 
+      context: ../../builds/mongo

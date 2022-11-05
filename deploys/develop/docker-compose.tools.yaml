@@ -1,0 +1,8 @@
+version: "3"
+services:
+  angular-cli: 
+    build: 
+      context: ../../builds/angular-cli
+    command: bash
+    volumes:
+      - ../../src:/app
