@@ -9,3 +9,10 @@ services:
   busybox:
     build:
       context: ../../builds/busybox
+  pyruiz: 
+    build: 
+      context: ../../builds/pyruiz
+    command: python3 app.py
+    volumes:
+      - ../../src/pyruiz:/dat
+  
