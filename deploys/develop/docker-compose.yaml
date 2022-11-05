@@ -23,6 +23,14 @@ services:
   mongo:
     build: 
       context: ../../builds/mongo
+  antivirus:
+    build:
+      context: ../../builds/antivirus
+    restart: unless-stopped
+    volumes:
+      - clam:/var/lib/clamav
+    ports:
+      - 3310:3310
   pyruiz:
     build: 
       context: ../../builds/pyruiz
@@ -33,3 +41,5 @@ services:
       - ../../src/pyruiz:/dat
     ports:
       - 8000:8000
+volumes:
+  clam:

@@ -6,6 +6,12 @@ services:
     command: bash
     volumes:
       - ../../src:/app
+  antivirus:
+    healthcheck:
+      test: ["CMD", "./check.sh"]
+      interval: 60s
+      retries: 3
+      start_period: 120s
   busybox:
     build:
       context: ../../builds/busybox
@@ -15,4 +21,3 @@ services:
     command: python3 app.py
     volumes:
       - ../../src/pyruiz:/dat
-  
