@@ -14,6 +14,5 @@ build:
 ng:
 	docker compose -f deploys/develop/docker-compose.tools.yaml run --user 1000 --rm angular-cli
 
-
 install:
-	docker compose -f deploys/develop/docker-compose.tools.yaml run --user 1000 --rm angular-cli
+	docker compose -f deploys/develop/docker-compose.yaml run --user 1000 --rm frontend bash -c "npm i"
