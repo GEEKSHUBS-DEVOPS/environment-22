@@ -23,3 +23,15 @@ services:
   mongo:
     build: 
       context: ../../builds/mongo
+  antivirus:
+    build:
+      context: ../../builds/antivirus
+    restart: unless-stopped
+    volumes:
+      - clam:/var/lib/clamav
+    ports:
+      - 3310:3310
+      # - 4201:4200
+volumes:
+  clam:
+
