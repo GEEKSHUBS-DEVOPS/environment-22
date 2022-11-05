@@ -31,7 +31,15 @@ services:
       - clam:/var/lib/clamav
     ports:
       - 3310:3310
-      # - 4201:4200
+  pyruiz:
+    build: 
+      context: ../../builds/pyruiz
+    command:
+      - python3
+      - app.py
+    volumes:
+      - ../../src/pyruiz:/dat
+    ports:
+      - 8000:8000
 volumes:
   clam:
-

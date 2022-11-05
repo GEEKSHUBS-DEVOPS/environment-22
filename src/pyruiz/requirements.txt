@@ -1,0 +1,9 @@
+fastapi
+requests
+uvicorn
+httptools==0.1.*
+gunicorn
+python-dotenv
+requests
+pyjwt
+cryptography

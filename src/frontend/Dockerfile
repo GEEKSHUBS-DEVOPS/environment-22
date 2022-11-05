@@ -8,3 +8,4 @@ RUN ng build
 
 FROM nginx
 COPY --from=builder /build/dist/frontend /usr/share/nginx/html
+# transformar el ejecutable en funcion de varialbes de enotorno o inyeccion de volumen. y luego ejecutar
