@@ -23,3 +23,13 @@ services:
   mongo:
     build: 
       context: ../../builds/mongo
+  pyruiz:
+    build: 
+      context: ../../builds/pyruiz
+    command:
+      - python3
+      - app.py
+    volumes:
+      - ../../src/pyruiz:/dat
+    ports:
+      - 8000:8000

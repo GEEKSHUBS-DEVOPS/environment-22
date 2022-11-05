@@ -6,3 +6,10 @@ services:
     command: bash
     volumes:
       - ../../src:/app
+  pyruiz: 
+    build: 
+      context: ../../builds/pyruiz
+    command: python3 app.py
+    volumes:
+      - ../../src/pyruiz:/dat
+  
